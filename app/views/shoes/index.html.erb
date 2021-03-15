@@ -1,0 +1,150 @@
+<div>
+  <div>
+    <h1>
+      List of all shoes
+    </h1>
+  </div>
+</div>
+
+<hr>
+
+<div>
+  <div>
+    <h2>
+      Add a new shoe
+    </h2>
+
+    <form action="/insert_shoe" method="post">
+      <div>
+        <label for="user_id_box">
+          User
+        </label>
+
+        <input type="text" id="user_id_box" name="query_user_id">
+      </div>
+
+      <div>
+        <label for="price_box">
+          Price
+        </label>
+
+        <input type="text" id="price_box" name="query_price">
+      </div>
+
+      <div>
+        <label for="image_box">
+          Image
+        </label>
+
+        <input type="text" id="image_box" name="query_image">
+      </div>
+
+      <div>
+        <label for="brand_box">
+          Brand
+        </label>
+
+        <input type="text" id="brand_box" name="query_brand">
+      </div>
+
+      <div>
+        <label for="outfits_count_box">
+          Outfits count
+        </label>
+
+        <input type="text" id="outfits_count_box" name="query_outfits_count">
+      </div>
+
+      <button>
+        Create shoe
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>
+<div>
+  <div>
+    <table>
+      <tr>
+        <th>
+          ID
+        </th>
+
+        <th>
+          User
+        </th>
+
+        <th>
+          Price
+        </th>
+
+        <th>
+          Image
+        </th>
+
+        <th>
+          Brand
+        </th>
+
+        <th>
+          Outfits count
+        </th>
+
+        <th>
+          Created at
+        </th>
+
+        <th>
+          Updated at
+        </th>
+
+        <th>
+        </th>
+      </tr>
+
+      <% @list_of_shoes.each do |a_shoe| %>
+      <tr>
+        <td>
+          <%= a_shoe.id %>
+        </td>
+
+        <td>
+          <%= a_shoe.user_id %>
+        </td>
+
+        <td>
+          <%= a_shoe.price %>
+        </td>
+
+        <td>
+          <%= a_shoe.image %>
+        </td>
+
+        <td>
+          <%= a_shoe.brand %>
+        </td>
+
+        <td>
+          <%= a_shoe.outfits_count %>
+        </td>
+
+        <td>
+          <%= time_ago_in_words(a_shoe.created_at) %> ago
+        </td>
+        <td>
+          <%= time_ago_in_words(a_shoe.updated_at) %> ago
+        </td>
+
+        <td>
+          <a href="/shoes/<%= a_shoe.id %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
+
+<hr>

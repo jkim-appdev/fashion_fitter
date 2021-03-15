@@ -1,0 +1,150 @@
+<div>
+  <div>
+    <h1>
+      List of all bottoms
+    </h1>
+  </div>
+</div>
+
+<hr>
+
+<div>
+  <div>
+    <h2>
+      Add a new bottom
+    </h2>
+
+    <form action="/insert_bottom" method="post">
+      <div>
+        <label for="user_id_box">
+          User
+        </label>
+
+        <input type="text" id="user_id_box" name="query_user_id">
+      </div>
+
+      <div>
+        <label for="price_box">
+          Price
+        </label>
+
+        <input type="text" id="price_box" name="query_price">
+      </div>
+
+      <div>
+        <label for="image_box">
+          Image
+        </label>
+
+        <input type="text" id="image_box" name="query_image">
+      </div>
+
+      <div>
+        <label for="brand_box">
+          Brand
+        </label>
+
+        <input type="text" id="brand_box" name="query_brand">
+      </div>
+
+      <div>
+        <label for="outfits_count_box">
+          Outfits count
+        </label>
+
+        <input type="text" id="outfits_count_box" name="query_outfits_count">
+      </div>
+
+      <button>
+        Create bottom
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>
+<div>
+  <div>
+    <table>
+      <tr>
+        <th>
+          ID
+        </th>
+
+        <th>
+          User
+        </th>
+
+        <th>
+          Price
+        </th>
+
+        <th>
+          Image
+        </th>
+
+        <th>
+          Brand
+        </th>
+
+        <th>
+          Outfits count
+        </th>
+
+        <th>
+          Created at
+        </th>
+
+        <th>
+          Updated at
+        </th>
+
+        <th>
+        </th>
+      </tr>
+
+      <% @list_of_bottoms.each do |a_bottom| %>
+      <tr>
+        <td>
+          <%= a_bottom.id %>
+        </td>
+
+        <td>
+          <%= a_bottom.user_id %>
+        </td>
+
+        <td>
+          <%= a_bottom.price %>
+        </td>
+
+        <td>
+          <%= a_bottom.image %>
+        </td>
+
+        <td>
+          <%= a_bottom.brand %>
+        </td>
+
+        <td>
+          <%= a_bottom.outfits_count %>
+        </td>
+
+        <td>
+          <%= time_ago_in_words(a_bottom.created_at) %> ago
+        </td>
+        <td>
+          <%= time_ago_in_words(a_bottom.updated_at) %> ago
+        </td>
+
+        <td>
+          <a href="/bottoms/<%= a_bottom.id %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
+
+<hr>

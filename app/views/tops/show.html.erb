@@ -1,0 +1,131 @@
+<div>
+  <div>
+    <h1>
+      Top #<%= @the_top.id %> details
+    </h1>
+
+    <div>
+      <div>
+        <a href="/tops">
+          Go back
+        </a>
+      </div>
+
+      <div>
+        <a href="/delete_top/<%= @the_top.id %>">
+          Delete top
+        </a>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        User
+      </dt>
+      <dd>
+        <%= @the_top.user_id %>
+      </dd>
+
+      <dt>
+        Price
+      </dt>
+      <dd>
+        <%= @the_top.price %>
+      </dd>
+
+      <dt>
+        Image
+      </dt>
+      <dd>
+        <%= @the_top.image %>
+      </dd>
+
+      <dt>
+        Brand
+      </dt>
+      <dd>
+        <%= @the_top.brand %>
+      </dd>
+
+      <dt>
+        Outfits count
+      </dt>
+      <dd>
+        <%= @the_top.outfits_count %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_top.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_top.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+
+<hr>
+
+
+<div>
+  <div>
+    <h2>
+      Edit top
+    </h2>
+
+    <form action="/modify_top/<%= @the_top.id %>"  method="post" >
+      <div>
+        <label for="user_id_box">
+          User
+        </label>
+
+        <input type="text" id="user_id_box" name="query_user_id" value="<%= @the_top.user_id %>">
+      </div>
+
+      <div>
+        <label for="price_box">
+          Price
+        </label>
+
+        <input type="text" id="price_box" name="query_price" value="<%= @the_top.price %>">
+      </div>
+
+      <div>
+        <label for="image_box">
+          Image
+        </label>
+
+        <input type="text" id="image_box" name="query_image" value="<%= @the_top.image %>">
+      </div>
+
+      <div>
+        <label for="brand_box">
+          Brand
+        </label>
+
+        <input type="text" id="brand_box" name="query_brand" value="<%= @the_top.brand %>">
+      </div>
+
+      <div>
+        <label for="outfits_count_box">
+          Outfits count
+        </label>
+
+        <input type="text" id="outfits_count_box" name="query_outfits_count" value="<%= @the_top.outfits_count %>">
+      </div>
+
+      <button>
+        Update top
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>

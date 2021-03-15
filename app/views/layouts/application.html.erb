@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>FinalProject</title>
+    <title>Wardrobe Wizard</title>
     <%= csrf_meta_tags %>
 
     <!-- Expand the number of characters we can use in the document beyond basic ASCII 🎉 -->
@@ -16,6 +16,8 @@
   </head>
 
   <body>
+    <p style="color: green;"> <%= notice %> </p>
+    <p style="color: red;"> <%= alert %> </p>
     <%= yield %>
   </body>
 </html>

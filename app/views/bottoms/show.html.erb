@@ -1,0 +1,131 @@
+<div>
+  <div>
+    <h1>
+      Bottom #<%= @the_bottom.id %> details
+    </h1>
+
+    <div>
+      <div>
+        <a href="/bottoms">
+          Go back
+        </a>
+      </div>
+
+      <div>
+        <a href="/delete_bottom/<%= @the_bottom.id %>">
+          Delete bottom
+        </a>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        User
+      </dt>
+      <dd>
+        <%= @the_bottom.user_id %>
+      </dd>
+
+      <dt>
+        Price
+      </dt>
+      <dd>
+        <%= @the_bottom.price %>
+      </dd>
+
+      <dt>
+        Image
+      </dt>
+      <dd>
+        <%= @the_bottom.image %>
+      </dd>
+
+      <dt>
+        Brand
+      </dt>
+      <dd>
+        <%= @the_bottom.brand %>
+      </dd>
+
+      <dt>
+        Outfits count
+      </dt>
+      <dd>
+        <%= @the_bottom.outfits_count %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_bottom.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_bottom.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+
+<hr>
+
+
+<div>
+  <div>
+    <h2>
+      Edit bottom
+    </h2>
+
+    <form action="/modify_bottom/<%= @the_bottom.id %>"  method="post" >
+      <div>
+        <label for="user_id_box">
+          User
+        </label>
+
+        <input type="text" id="user_id_box" name="query_user_id" value="<%= @the_bottom.user_id %>">
+      </div>
+
+      <div>
+        <label for="price_box">
+          Price
+        </label>
+
+        <input type="text" id="price_box" name="query_price" value="<%= @the_bottom.price %>">
+      </div>
+
+      <div>
+        <label for="image_box">
+          Image
+        </label>
+
+        <input type="text" id="image_box" name="query_image" value="<%= @the_bottom.image %>">
+      </div>
+
+      <div>
+        <label for="brand_box">
+          Brand
+        </label>
+
+        <input type="text" id="brand_box" name="query_brand" value="<%= @the_bottom.brand %>">
+      </div>
+
+      <div>
+        <label for="outfits_count_box">
+          Outfits count
+        </label>
+
+        <input type="text" id="outfits_count_box" name="query_outfits_count" value="<%= @the_bottom.outfits_count %>">
+      </div>
+
+      <button>
+        Update bottom
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>
