@@ -19,12 +19,12 @@
     </div>
 
     <dl>
-      <dt>
-        User
-      </dt>
-      <dd>
-        <%= @the_top.user_id %>
-      </dd>
+      <%# <dt> %>
+        <%# User %>
+      <%# </dt> %>
+      <%# <dd> %>
+        <%# <%= @the_top.user_id %> 
+      <%# </dd> %>
 
       <dt>
         Price
@@ -37,7 +37,7 @@
         Image
       </dt>
       <dd>
-        <%= @the_top.image %>
+        <img src=<%= @the_top.image %>>
       </dd>
 
       <dt>
@@ -81,13 +81,14 @@
     </h2>
 
     <form action="/modify_top/<%= @the_top.id %>"  method="post" >
-      <div>
-        <label for="user_id_box">
-          User
-        </label>
+      <%# <div> %>
+        <%# <label for="user_id_box"> %>
+          <%# User %>
+        <%# </label> %>
 
-        <input type="text" id="user_id_box" name="query_user_id" value="<%= @the_top.user_id %>">
-      </div>
+        <%# <input type="text" id="user_id_box" name="query_user_id" value="<%= @the_top.user_id %>
+        <%# "> %> 
+      <%# </div> %>
 
       <div>
         <label for="price_box">

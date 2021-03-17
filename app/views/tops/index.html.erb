@@ -71,9 +71,9 @@
           ID
         </th>
 
-        <th>
+        <%# <th>
           User
-        </th>
+        </th> %>
 
         <th>
           Price
@@ -85,10 +85,6 @@
 
         <th>
           Brand
-        </th>
-
-        <th>
-          Outfits count
         </th>
 
         <th>
@@ -109,24 +105,20 @@
           <%= a_top.id %>
         </td>
 
-        <td>
-          <%= a_top.user_id %>
-        </td>
+        <%# <td> %>
+          <%# <%= a_top.poster.username %>
+        <%# </td> %>
 
         <td>
           <%= a_top.price %>
         </td>
 
         <td>
-          <%= a_top.image %>
+          <img src=<%= a_top.image %>>
         </td>
 
         <td>
           <%= a_top.brand %>
-        </td>
-
-        <td>
-          <%= a_top.outfits_count %>
         </td>
 
         <td>
