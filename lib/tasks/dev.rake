@@ -40,4 +40,28 @@ task({ :sample_data => :environment}) do
   end
   p "Added #{Top.count} Tops"
 
+  50.times do
+    shoe = Shoe.new
+    # top.id = Faker::Number.number(digits: 4)
+    shoe.brand = Faker::GreekPhilosophers.name
+    shoe.image = Faker::Company.logo
+    shoe.price = Faker::Number.decimal(l_digits: 2)
+    shoe.user_id = User.all.sample.id
+    shoe.save
+    p shoe.errors.full_messages
+  end
+  p "Added #{Shoe.count} Shoes"
+
+  50.times do
+    bottom = Bottom.new
+    # top.id = Faker::Number.number(digits: 4)
+    bottom.brand = Faker::GreekPhilosophers.name
+    bottom.image = Faker::Company.logo
+    bottom.price = Faker::Number.decimal(l_digits: 2)
+    bottom.user_id = User.all.sample.id
+    bottom.save
+    p bottom.errors.full_messages
+  end
+  p "Added #{Bottom.count} Bottoms"
+
 end
