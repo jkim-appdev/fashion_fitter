@@ -11,7 +11,7 @@
     <% if top_for_outfit != nil %>
       <a href="/delete_outfit/<%= top_for_outfit.id %>"> Remove top from outfits</a>
     <% else %>
-      <form action="/insert_clothes_into_outfit_show" method="post">
+      <form action="/insert_tops_into_outfit_show" method="post">
         <input type="hidden" name="query_top_id" value="<%= @the_top.id %>">
 
         <button>

@@ -3,7 +3,24 @@
     <h1>
       Bottom #<%= @the_bottom.id %> details
     </h1>
+    <% outfit_bottoms = Outfit.where({:user_id => @current_user.id, :bottom_id => @the_bottom.id }) %>
 
+    <% bottom_for_outfit = outfit_bottoms.at(0) %>
+    <hr>
+
+    <% if bottom_for_outfit != nil %>
+      <a href="/delete_outfit/<%= bottom_for_outfit.id %>"> Remove bottom from outfits</a>
+    <% else %>
+      <form action="/insert_bottoms_into_outfit_show" method="post">
+        <input type="hidden" name="query_bottom_id" value="<%= @the_bottom.id %>">
+
+        <button>
+          Save this bottom
+        </button>
+      </form>
+    <% end %>
+
+    <hr>
     <div>
       <div>
         <a href="/bottoms">
