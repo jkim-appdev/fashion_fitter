@@ -6,9 +6,9 @@
   </div>
 </div>
 
-<hr>
+<%# <hr> %>
 
-<div>
+<%# <div>
   <div>
     <h2>
       Add a new outfit
@@ -52,16 +52,16 @@
       </button>
     </form>
   </div>
-</div>
+</div> %>
 
 <hr>
 <div>
   <div>
     <table>
       <tr>
-        <th>
+        <%# <th>
           ID
-        </th>
+        </th> %>
 
         <th>
           Top
@@ -93,9 +93,9 @@
 
       <% @list_of_outfits.each do |an_outfit| %>
       <tr>
-        <td>
+        <%# <td>
           <%= an_outfit.id %>
-        </td>
+        <%# </td>  %>
 
         <td>
           <%= an_outfit.top_id %>
@@ -110,7 +110,7 @@
         </td>
 
         <td>
-          <%= an_outfit.user_id %>
+          <%= an_outfit.user.username %>
         </td>
 
         <td>

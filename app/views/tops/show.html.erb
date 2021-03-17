@@ -3,7 +3,24 @@
     <h1>
       Top #<%= @the_top.id %> details
     </h1>
+    <% outfit_tops = Outfit.where({:user_id => @current_user.id, :top_id => @the_top.id }) %>
 
+    <% top_for_outfit = outfit_tops.at(0) %>
+    <hr>
+
+    <% if top_for_outfit != nil %>
+      <a href="/delete_outfit/<%= top_for_outfit.id %>"> Remove top from outfits</a>
+    <% else %>
+      <form action="/insert_clothes_into_outfit_show" method="post">
+        <input type="hidden" name="query_top_id" value="<%= @the_top.id %>">
+
+        <button>
+          Save this top
+        </button>
+      </form>
+    <% end %>
+
+    <hr>
     <div>
       <div>
         <a href="/tops">

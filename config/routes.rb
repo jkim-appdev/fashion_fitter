@@ -6,6 +6,8 @@ Rails.application.routes.draw do
 
   # CREATE
   post("/insert_outfit", { :controller => "outfits", :action => "create" })
+
+  post("/insert_clothes_into_outfit_show", { :controller => "outfits", :action => "create_into_outfit_show"})
           
   # READ
   get("/outfits", { :controller => "outfits", :action => "index" })
