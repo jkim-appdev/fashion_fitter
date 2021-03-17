@@ -16,8 +16,51 @@
   </head>
 
   <body>
-    <p style="color: green;"> <%= notice %> </p>
-    <p style="color: red;"> <%= alert %> </p>
+  <p style="color: green;"> <%= notice %> </p>
+  <p style="color: red;"> <%= alert %> </p>
+  <ul>
+    <li>
+      <a href="/tops">
+        Tops
+      </a>
+    </li>
+    <li>
+      <a href="/bottoms">
+        Bottoms
+      </a>
+    </li>
+    <li>
+      <a href="/shoes">
+        Shoes
+      </a>
+    </li>
+    
+    <% if session[:user_id] == nil %>
+    <li>
+      <a href="/user_sign_up">
+        User sign-up
+      </a>
+    </li>
+    <li>
+      <a href="/user_sign_in">
+        User sign-in
+      </a>
+    </li>
+
+    <% else %>
+    <li>
+      Welcome back, <%= @current_user.username %>.
+    </li>
+    <li>
+      <a href="/user_sign_out"> Sign out. </a>
+    </li>
+    <li>
+      <a href="/outfits">
+        My outfits
+      </a>
+    </li>
+    <% end %>
+  </ul>    
     <%= yield %>
   </body>
 </html>
