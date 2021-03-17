@@ -14,8 +14,8 @@
 class Top < ApplicationRecord
   belongs_to(:user, { :required => false, :class_name => "User", :foreign_key => "user_id" })
   has_many(:outfits, { :class_name => "Outfit", :foreign_key => "top_id", :dependent => :nullify })
-  validates(:poster, { :presence => true })  
-  def poster
-    return User.where({ :id => self.user_id }).at(0)
-  end
+  # validates(:poster, { :presence => true })  
+  # def poster
+  #   return User.where({ :id => self.user_id }).at(0)
+  # end
 end
