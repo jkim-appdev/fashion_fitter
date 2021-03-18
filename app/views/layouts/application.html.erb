@@ -10,7 +10,7 @@
     <!-- Make it responsive to small screens -->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= csp_meta_tag %>
-    
+    <link rel="stylesheet" href="public/layouts.css">
     <%= stylesheet_link_tag 'application', media: 'all' %>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" 
@@ -19,28 +19,26 @@
     integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
 
 
-    <link rel="stylesheet" href="layouts.css.erb">
+    <link rel="stylesheet" href="public/layouts.css">
   </head>
 
   <body>
   <p style="color: green;"> <%= notice %> </p>
   <p style="color: red;"> <%= alert %> </p>
+
+  <ul class="nav justify-content-center">
+    <li class="nav-item">
+      <a class="nav-link" href="/tops">Tops</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/bottoms">Bottoms</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/shoes">Shoes</a>
+    </li>
+  </ul>
   <ul>
-    <li>
-      <a href="/tops">
-        Tops
-      </a>
-    </li>
-    <li>
-      <a href="/bottoms">
-        Bottoms
-      </a>
-    </li>
-    <li>
-      <a href="/shoes">
-        Shoes
-      </a>
-    </li>
+    
     
     <% if session[:user_id] == nil %>
     <li>

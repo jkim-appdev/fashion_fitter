@@ -63,6 +63,14 @@
         </th> %>
 
         <th>
+          Brand
+        </th>
+        
+        <th>
+          Price
+        </th>
+
+        <th>
           Created at
         </th>
 
@@ -80,6 +88,16 @@
         <%# <td>
           <%= an_outfit.id %>
         <%# </td>  %>
+        
+        <td>
+          if @the_outfit.top_id != nil
+            p "top it off"
+          elsif @the_outfit.bottom_id != nil
+            p "bottoms up!"
+          else
+            p "a shoe-in"
+          end
+        </td>
 
         <td>
           <%= time_ago_in_words(an_outfit.created_at) %> ago

@@ -1,7 +1,7 @@
 <div>
   <div>
     <h1>
-      Bottom #<%= @the_bottom.id %> details
+      Pants #<%= @the_bottom.id %> details
     </h1>
     <% outfit_bottoms = Outfit.where({:user_id => @current_user.id, :bottom_id => @the_bottom.id }) %>
 
@@ -9,13 +9,13 @@
     <hr>
 
     <% if bottom_for_outfit != nil %>
-      <a href="/delete_outfit/<%= bottom_for_outfit.id %>"> Remove bottom from outfits</a>
+      <a href="/delete_outfit/<%= bottom_for_outfit.id %>"> Remove pants from outfits</a>
     <% else %>
       <form action="/insert_bottoms_into_outfit_show" method="post">
         <input type="hidden" name="query_bottom_id" value="<%= @the_bottom.id %>">
 
         <button>
-          Save this bottom
+          Save these pants
         </button>
       </form>
     <% end %>
@@ -30,7 +30,7 @@
 
       <div>
         <a href="/delete_bottom/<%= @the_bottom.id %>">
-          Delete bottom
+          Delete pants
         </a>
       </div>
     </div>

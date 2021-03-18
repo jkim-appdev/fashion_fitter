@@ -20,7 +20,7 @@ class OutfitsController < ApplicationController
   def tops_into_outfit_show
     the_outfit = Outfit.new
     the_outfit.user_id = @current_user.id
-    the_outfit.top_id = params.fetch("query_top_id")
+    @the_outfit.top_id = params.fetch("query_top_id")
 
     if the_outfit.valid?
       the_outfit.save
@@ -33,7 +33,7 @@ class OutfitsController < ApplicationController
   def bottoms_into_outfit_show
     the_outfit = Outfit.new
     the_outfit.user_id = @current_user.id
-    the_outfit.bottom_id = params.fetch("query_bottom_id")
+    @the_outfit.bottom_id = params.fetch("query_bottom_id")
 
     if the_outfit.valid?
       the_outfit.save
@@ -46,7 +46,7 @@ class OutfitsController < ApplicationController
   def shoes_into_outfit_show
     the_outfit = Outfit.new
     the_outfit.user_id = @current_user.id
-    the_outfit.shoes_id = params.fetch("query_shoes_id")
+    @the_outfit.shoes_id = params.fetch("query_shoes_id")
 
     if the_outfit.valid?
       the_outfit.save
