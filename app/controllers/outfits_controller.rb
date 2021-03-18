@@ -43,6 +43,19 @@ class OutfitsController < ApplicationController
     end
   end
 
+  def shoes_into_outfit_show
+    the_outfit = Outfit.new
+    the_outfit.user_id = @current_user.id
+    the_outfit.shoes_id = params.fetch("query_shoes_id")
+
+    if the_outfit.valid?
+      the_outfit.save
+      redirect_to("/shoes/#{the_outfit.shoes_id}", { :notice => "Shoes saved successfully." })
+    else
+      redirect_to("/outfits", { :notice => "Clothes failed to save successfully." })
+    end 
+  end
+
   def create
     the_outfit = Outfit.new
     the_outfit.top_id = params.fetch("query_top_id")

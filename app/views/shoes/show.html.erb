@@ -3,7 +3,24 @@
     <h1>
       Shoe #<%= @the_shoe.id %> details
     </h1>
+    <% outfit_shoes = Outfit.where({:user_id => @current_user.id, :shoes_id => @the_shoe.id }) %>
 
+    <% shoe_for_outfit = outfit_shoes.at(0) %>
+    <hr>
+
+    <% if shoe_for_outfit != nil %>
+      <a href="/delete_outfit/<%= shoe_for_outfit.id %>"> Remove shoe from outfits</a>
+    <% else %>
+      <form action="/insert_shoes_into_outfit_show" method="post">
+        <input type="hidden" name="query_shoes_id" value="<%= @the_shoe.id %>">
+
+        <button>
+          Save these shoes
+        </button>
+      </form>
+    <% end %> 
+
+    <hr>
     <div>
       <div>
         <a href="/shoes">

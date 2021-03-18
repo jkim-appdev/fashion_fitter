@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
   post("/insert_tops_into_outfit_show", { :controller => "outfits", :action => "tops_into_outfit_show"})
   post("/insert_bottoms_into_outfit_show", { :controller =>"outfits", :action => "bottoms_into_outfit_show"})
-          
+  post("/insert_shoes_into_outfit_show", { :controller =>"outfits", :action => "shoes_into_outfit_show"})      
   # READ
   get("/outfits", { :controller => "outfits", :action => "index" })
   
