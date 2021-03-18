@@ -15,6 +15,12 @@
     </h2>
 
     <form action="/insert_shoe" method="post">
+      <div>
+        <label for="price_box">
+          Shoe ID
+        </label>
+        <input type="text" id="price_box" name="query_user_id" value="<%= @the_shoe %>">
+      </div>
 
       <div>
         <label for="price_box">
@@ -22,7 +28,7 @@
         </label>
 
         <input type="text" id="price_box" name="query_price">
-      </div>
+      </div> 
 
       <div>
         <label for="image_box">
@@ -38,6 +44,13 @@
         </label>
 
         <input type="text" id="brand_box" name="query_brand">
+      </div>
+
+      <div>
+        <label for="outfit_count_box">
+          Outfit count
+        </label>
+        <input type="text" id="outfit_count_box" name="query_outfits_count" value="">
       </div>
 
       <button>
