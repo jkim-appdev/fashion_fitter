@@ -1,8 +1,24 @@
-h1 {
+h3 {
     color: maroon;
 }
 img {
-  display: block;
-  max-width: 100%;
-  height: auto;
+  display: flex;
+  max-width: 75%;
+  height: 200px;
+}
+
+a {
+  font-family: 'Old Standard TT', serif;
+}
+body {
+  font-family: 'Old Standard TT', serif;
+}
+div {
+  font-family: 'Old Standard TT', serif;
+}
+td {
+  font-family: 'Montserrat', sans-serif;
+}
+dd {
+  font-family: 'Montserrat', sans-serif;
 }
