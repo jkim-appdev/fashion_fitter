@@ -65,13 +65,6 @@
       </dd>
 
       <dt>
-        Outfits count
-      </dt>
-      <dd>
-        <%= @the_shoe.outfits_count %>
-      </dd>
-
-      <dt>
         Created at
       </dt>
       <dd>
@@ -97,15 +90,6 @@
       Edit shoe
     </h2>
 
-    <form action="/modify_shoe/<%= @the_shoe.id %>"  method="post" >
-      <div>
-        <label for="user_id_box">
-          User
-        </label>
-
-        <input type="text" id="user_id_box" name="query_user_id" value="<%= @the_shoe.user_id %>">
-      </div>
-
       <div>
         <label for="price_box">
           Price
@@ -128,14 +112,6 @@
         </label>
 
         <input type="text" id="brand_box" name="query_brand" value="<%= @the_shoe.brand %>">
-      </div>
-
-      <div>
-        <label for="outfits_count_box">
-          Outfits count
-        </label>
-
-        <input type="text" id="outfits_count_box" name="query_outfits_count" value="<%= @the_shoe.outfits_count %>">
       </div>
 
       <button>

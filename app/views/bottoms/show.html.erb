@@ -54,7 +54,7 @@
         Image
       </dt>
       <dd>
-        <%= @the_bottom.image %>
+        <img src=<%= @the_bottom.image %>>
       </dd>
 
       <dt>
@@ -64,13 +64,7 @@
         <%= @the_bottom.brand %>
       </dd>
 
-      <dt>
-        Outfits count
-      </dt>
-      <dd>
-        <%= @the_bottom.outfits_count %>
-      </dd>
-
+      
       <dt>
         Created at
       </dt>
@@ -98,13 +92,6 @@
     </h2>
 
     <form action="/modify_bottom/<%= @the_bottom.id %>"  method="post" >
-      <div>
-        <label for="user_id_box">
-          User
-        </label>
-
-        <input type="text" id="user_id_box" name="query_user_id" value="<%= @the_bottom.user_id %>">
-      </div>
 
       <div>
         <label for="price_box">
@@ -128,14 +115,6 @@
         </label>
 
         <input type="text" id="brand_box" name="query_brand" value="<%= @the_bottom.brand %>">
-      </div>
-
-      <div>
-        <label for="outfits_count_box">
-          Outfits count
-        </label>
-
-        <input type="text" id="outfits_count_box" name="query_outfits_count" value="<%= @the_bottom.outfits_count %>">
       </div>
 
       <button>

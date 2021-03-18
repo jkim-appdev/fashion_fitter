@@ -15,7 +15,7 @@
         <input type="hidden" name="query_top_id" value="<%= @the_top.id %>">
 
         <button>
-          Save this top
+          Save this clothing
         </button>
       </form>
     <% end %>
@@ -62,13 +62,6 @@
       </dt>
       <dd>
         <%= @the_top.brand %>
-      </dd>
-
-      <dt>
-        Outfits count
-      </dt>
-      <dd>
-        <%= @the_top.outfits_count %>
       </dd>
 
       <dt>
@@ -129,14 +122,6 @@
         </label>
 
         <input type="text" id="brand_box" name="query_brand" value="<%= @the_top.brand %>">
-      </div>
-
-      <div>
-        <label for="outfits_count_box">
-          Outfits count
-        </label>
-
-        <input type="text" id="outfits_count_box" name="query_outfits_count" value="<%= @the_top.outfits_count %>">
       </div>
 
       <button>
